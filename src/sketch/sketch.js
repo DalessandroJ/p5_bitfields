@@ -3,9 +3,9 @@ import {
     commonDivisors,
     randomInt,
     randomFloat
-} from "../core/math.js";
-import { minMaxLum } from "../core/utils.js";
-import { saveStamped } from "../core/utils.js";
+} from "./utils.js";
+import { minMaxLum } from "./utils.js";
+import { saveStamped } from "./utils.js";
 import { Renderer } from "../render/renderer.js";
 import { makeLayer } from "../render/layer.js";
 import { drawInfoBox } from "./infoBox.js";

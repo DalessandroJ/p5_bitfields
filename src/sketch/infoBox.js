@@ -1,4 +1,4 @@
-import { randomInt } from "../core/math.js";
+import { randomInt } from "./utils.js";
 import { OPS } from "../render/ops.js";
 
 export function drawInfoBox({

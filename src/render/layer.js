@@ -1,4 +1,4 @@
-import { randomInt } from "../core/math.js";
+import { randomInt } from "../sketch/utils.js";
 import { OPS } from "./ops.js";
 
 /**
