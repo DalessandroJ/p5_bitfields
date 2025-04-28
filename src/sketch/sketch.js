@@ -4,7 +4,7 @@ import {
     randomInt,
     randomFloat
 } from "../core/math.js";
-import { minMaxLum } from "../core/color.js";
+import { minMaxLum } from "../core/utils.js";
 import { saveStamped } from "../core/utils.js";
 import { Renderer } from "../render/renderer.js";
 import { makeLayer } from "../render/layer.js";
