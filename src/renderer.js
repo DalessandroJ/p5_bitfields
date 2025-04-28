@@ -50,24 +50,19 @@ const Renderer = {
     /**
      * Renders multiple layers by compositing them onto the main canvas.
      * @param {Object[]} layers - Array of layer configurations
-     * @param {number} width - Canvas width
-     * @param {number} height - Canvas height
+     * @param {number} gridSize - gridSize
+     * @param {number} margin - margin
      */
-    drawLayers: (layers, width, height) => {
+    drawLayers: (layers, gridSize, margin = 0) => {
         layers.forEach(layer => {
-            const buffer = createGraphics(width, height);
+            const buffer = createGraphics(gridSize, gridSize);
             Renderer.drawBitGrid({
-                cols: layer.cols,
-                rows: layer.rows,
-                xOffset: layer.xOffset,
-                yOffset: layer.yOffset,
-                patternFn: layer.patternFn,
-                palette: layer.palette,
-                width,
-                height,
+                ...layer,
+                width: gridSize,
+                height: gridSize,
                 numTransparentStates: layer.numTransparentStates,
             }, buffer);
-            image(buffer, 0, 0); // Composite layer onto main canvas
+            image(buffer, margin, margin); // Composite layer onto main canvas
         });
     },
 };

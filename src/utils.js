@@ -1,5 +1,26 @@
 const Utils = {
     /**
+    * Find the min- and max-luminance colors in a hex array.
+    * @param {string[]} colors
+    * @returns {{darkest:string, lightest:string}}
+    */
+    minMaxLum(colors) {
+        let dark = colors[0], light = colors[0];
+        let minL = Infinity, maxL = -Infinity;
+        for (let raw of colors) {
+            const hex = raw.replace(/^#/, '');
+            const v = parseInt(hex, 16);
+            const r = (v >> 16) & 0xFF;
+            const g = (v >> 8) & 0xFF;
+            const b = v & 0xFF;
+            const L = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            if (L < minL) { minL = L; dark = raw; }
+            if (L > maxL) { maxL = L; light = raw; }
+        }
+        return { darkest: dark, lightest: light };
+    },
+
+    /**
  * Returns the greatest common divisor of a and b.
  * @param {number} a
  * @param {number} b
