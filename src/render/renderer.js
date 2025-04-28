@@ -1,6 +1,6 @@
 export const Renderer = {
     /**
-     * Draws a grid of colored pixels based on a pattern function.
+     * draws a grid of colored pixels based on a pattern function.
      * @param {Object} options - Rendering options
      * @param {number} options.cols - Number of columns
      * @param {number} options.rows - Number of rows
@@ -26,14 +26,14 @@ export const Renderer = {
                 const v = patternFn(col + xOffset, row + yOffset);
                 const idx = 4 * (px + py * width);
 
-                // compute “palette index” after skipping transparent slots
+                // compute palette index after skipping transparent states
                 const pi = v - numTransparentStates;
 
                 if (pi < 0 || pi >= palette.length) {
-                    // out-of-range → fully transparent
+                    // out-of-range --> fully transparent
                     target.pixels[idx + 3] = 0;
                 } else {
-                    // valid palette entry → draw opaque
+                    // valid palette entry --> draw color
                     const hex = palette[pi].replace(/^#/, '');
                     const iv = parseInt(hex, 16);
                     target.pixels[idx + 0] = (iv >> 16) & 0xFF;
@@ -48,8 +48,8 @@ export const Renderer = {
     },
 
     /**
-     * Renders multiple layers by compositing them onto the main canvas.
-     * @param {Object[]} layers - Array of layer configurations
+     * renders multiple layers by compositing them onto the main canvas.
+     * @param {Object[]} layers - array of layer configurations
      * @param {number} gridSize - gridSize
      * @param {number} margin - margin
      */
@@ -62,7 +62,7 @@ export const Renderer = {
                 height: gridSize,
                 numTransparentStates: layer.numTransparentStates,
             }, buffer);
-            image(buffer, margin, margin); // Composite layer onto main canvas
+            image(buffer, margin, margin); // composite layer onto main canvas
         });
     },
 };

@@ -14,19 +14,13 @@ export function drawInfoBox({
     chosenPalName
 }) {
     // rectangle
-    const rectHex =
-        bgCol === darkest ? lightest :
-            bgCol === lightest ? darkest :
-                [darkest, lightest][randomInt(0, 1)];
-
+    const rectHex = bgCol === darkest ? lightest : bgCol === lightest ? darkest : [darkest, lightest][randomInt(0, 1)];
     fill(`#${rectHex}`);
     noStroke();
-    rect(
-        cfg.margin,
-        cfg.gridSize + cfg.margin * 2,
-        cfg.gridSize,
-        cfg.canvasHeight - cfg.gridSize - cfg.margin * 3
-    );
+    rect(cfg.margin, cfg.gridSize + cfg.margin * 2, cfg.gridSize, cfg.canvasHeight - cfg.gridSize - cfg.margin * 3);
+
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------
 
     // text prep
     textSize(cfg.textSize);
@@ -34,8 +28,9 @@ export function drawInfoBox({
     textLeading(cfg.margin);
     textFont(cfg.textFont);
     textStyle(cfg.textWeight);
-    const textHex = rectHex === darkest ? lightest : darkest;
+    fill(`#${rectHex === darkest ? lightest : darkest}`);
 
+    // text content
     const lines = [
         `OPS        : ${OPS}`,
         `States     : ${numTransparentStates} transparent, ${numStates} filled, ${totalStates} total`,
@@ -45,14 +40,15 @@ export function drawInfoBox({
     ];
 
     // place text
-    fill(`#${textHex}`);
     const txtX = cfg.margin * 2;
     const txtY = cfg.gridSize + cfg.margin * 3;
     lines.forEach((l, i) => text(l, txtX, txtY + i * cfg.margin, cfg.gridSize - cfg.margin * 2));
 
-    // measure block height for swatches
-    const hText = textAscent() + textDescent() + (lines.length - 1) * textLeading();
-    const swatchY = Math.round(txtY + hText + cfg.margin);
+    //------------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------------------------------------
+
+    // swatches
+    const swatchY = Math.round(txtY + (textAscent() + textDescent() + (lines.length - 1) * cfg.margin) + cfg.margin);
     const swatchH = cfg.canvasHeight - cfg.margin - swatchY;
     const swatchW = cfg.gridSize / palette.length;
 

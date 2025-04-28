@@ -84,4 +84,5 @@ export async function setup() {
     saveStamped(numStates, numTransparentStates, chosenPal.name);
 }
 
+// make it global for p5
 window.setup = setup;
