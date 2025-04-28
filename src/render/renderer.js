@@ -1,4 +1,4 @@
-const Renderer = {
+export const Renderer = {
     /**
      * Draws a grid of colored pixels based on a pattern function.
      * @param {Object} options - Rendering options
