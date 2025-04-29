@@ -22,7 +22,7 @@ export async function setup() {
     noLoop();
 
     //Load the JSON. (no longer preload() as of p5@2.0.0)
-    const masterPalettes = await loadJSON('/masterPalettes.json');
+    const masterPalettes = await loadJSON('masterPalettes.json');
 
     //create the canvas based on sizes in config
     createCanvas(cfg.canvasWidth, cfg.canvasHeight);
