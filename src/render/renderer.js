@@ -56,6 +56,7 @@ export const Renderer = {
     drawLayers: (layers, gridSize, margin = 0) => {
         layers.forEach(layer => {
             const buffer = createGraphics(gridSize, gridSize);
+            buffer.pixelDensity(1);
             Renderer.drawBitGrid({
                 ...layer,
                 width: gridSize,
