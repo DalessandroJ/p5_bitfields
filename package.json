@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "author": "James Dalessandro",
-  "license": "CC0-1.0",
+  "license": "CC-BY",
   "description": "Makes some cool Bitfield generative art",
   "devDependencies": {
     "gh-pages": "^6.3.0",

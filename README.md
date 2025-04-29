@@ -27,7 +27,7 @@ npm run dev # http://localhost:5173 (hot-reload)
 
 ## License
 
-CC0-1.0 – do whatever you want. See the “license” field in package.json for the formal declaration.
+[CC-BY](https://creativecommons.org/licenses/by/4.0/). See the “license” field in package.json for the formal declaration.
 
 ## Credits
 
