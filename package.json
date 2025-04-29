@@ -1,0 +1,17 @@
+{
+  "name": "p5_bitfields",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "James Dalessandro",
+  "license": "CC0-1.0",
+  "description": "Makes some cool Bitfield generative art",
+  "devDependencies": {
+    "vite": "^6.3.3"
+  }
+}

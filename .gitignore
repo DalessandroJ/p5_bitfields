@@ -1,0 +1,7 @@
+# Node / Vite
+node_modules/
+dist/
+
+# Optional editor junk
+.vscode/
+.DS_Store

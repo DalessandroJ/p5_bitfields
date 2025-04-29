@@ -34,7 +34,7 @@ export function drawInfoBox({
     const lines = [
         `OPS        : ${OPS}`,
         `States     : ${numTransparentStates} transparent, ${numStates} filled, ${totalStates} total`,
-        `Base, Band : ∈ ℤ ∩ [1, 10]`,
+        `Base, Band : ∈ ℤ ∩ [1, 10]`, //they are an integer number between 1 and 10 inclusive
         `Layers     : ${numLayers}`,
         `Palette    : ${chosenPalName}`
     ];
